@@ -1,0 +1,22 @@
+<section class="container mx-auto mt-5">
+    <div class="grid grid-cols-12 gap-6">
+        <div class="content col-span-12 md:col-span-6">
+            <app-title title="Informações do pedido" fontSize="1.6rem" class="font-bold"></app-title>
+            <form [formGroup]="checkoutForm">
+                <text-input [control]="fc.name" label="Nome"></text-input>
+                <text-input [control]="fc.address" label="Endereço"></text-input>
+            </form>
+            <order-items-list [order]="order"></order-items-list>
+        </div>
+
+        <div class="map col-span-12 md:col-span-6" >
+            <app-title title="Insira seu endereço" fontSize="1.6rem" class="font-bold"></app-title>
+
+            <map [order]="order"></map>
+        </div>
+    </div>
+
+    <div class="btn-container w-full flex justify-center mt-10">
+        <button class="bg-red-500 rounded-lg w-3/5 text-white font-bold py-2" (click)="createOrder()">Ir para pagamento</button>
+    </div>
+</section>

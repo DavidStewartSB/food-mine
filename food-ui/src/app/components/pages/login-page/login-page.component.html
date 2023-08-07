@@ -1,0 +1,22 @@
+<div class="mx-auto container">
+    <div class="details">
+        <app-title class="text-center" title="Login Form"></app-title>
+
+
+        <form class="formLogin gap-5" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+            <text-input [control]="fc.email" [showErrorsWhen]="isSubmitted" type="email" label="Email" class=""></text-input>
+    
+            <text-input [control]="fc.password" [showErrorsWhen]="isSubmitted" type="password" label="password"></text-input>
+
+            <div class="button">
+                <button type="submit">Login</button>
+            </div>
+
+
+            <div class="text-center mt-5">
+                Não possuí login? &nbsp;
+                <a class="font-bold text-red-500" routerLink="/register" [queryParams]="{returnUrl: returnUrl}">Registrar</a>
+            </div>
+        </form>
+    </div>
+</div>

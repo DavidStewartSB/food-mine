@@ -1,0 +1,29 @@
+<section class="container mx-auto mt-5">
+    <div class="grid grid-cols-12 gap-6">
+        <div class="content col-span-12 md:col-span-6">
+            <app-title title="Resumo do pedido" fontSize="1.6rem" class="font-bold"></app-title>
+                <div class="summary flex mt-3">
+                    <div>
+                        <h3>Nome:</h3>
+                        <span class="">{{order.name}}</span>
+                    </div>
+
+                    <div>
+                        <h3>Endereço:</h3>
+                        <span class="">{{order.address}}</span>
+                    </div>
+                </div>
+            <order-items-list [order]="order"></order-items-list>
+        </div>
+
+        <div class="map col-span-12 md:col-span-6" >
+            <app-title title="Endereço para envio" fontSize="1.6rem" class="font-bold"></app-title>
+
+            <map [readonly]="true" [order]="order"></map>
+        </div>
+    </div>
+
+    <div class="btn-container w-full flex justify-center mt-10">
+        <div #paypal></div>
+    </div>
+</section>

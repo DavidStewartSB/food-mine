@@ -1,0 +1,17 @@
+<div class="container mx-auto">
+    <div class="content" *ngIf="order">
+        <h1>Pedido: #{{order.id}}</h1>
+
+        <div class="details">
+            <div><strong>Data </strong>{{order.createdAt | date :'dd/MM/yyyy HH:mm' : '-03:00'  }}</div>
+            <div><strong>Endereço </strong>{{order.address}}</div>
+            <div><strong>Nome </strong>{{order.name }}</div>
+            <div ><strong>Status: </strong><span class="capitalize font-bold">{{order.status }}</span></div>
+            <div *ngIf="order.paymentId">
+                <strong>ID de pagamento: </strong>{{order.paymentId }}
+            </div>
+        </div>
+
+        <order-items-list [order]="order"></order-items-list>
+    </div>
+</div>

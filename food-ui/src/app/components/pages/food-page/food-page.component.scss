@@ -1,0 +1,49 @@
+.details {
+    @apply w-full flex flex-col p-8 ml-4;
+}
+.header {
+    @apply flex justify-between
+
+}
+.name {
+    @apply font-bold text-4xl;
+}
+.origins {
+    @apply flex flex-wrap my-4;
+
+    span {
+        @apply py-1 px-3 text-lg m-2 ml-0 rounded-[2rem] bg-blue-100;
+    }
+}
+.tags {
+    @apply flex flex-wrap gap-4;
+
+    a {
+        @apply bg-gray-200 px-4 py-1 rounded-full font-semibold;  
+    }
+}
+.cook-time {
+    @apply mt-4;
+    span {
+        @apply rounded-full text-xl py-2 pr-8
+    }
+}
+
+.price {
+    @apply text-green-600 m-8 ml-0 text-3xl;
+    &::before {
+        content: "Preço: ";
+        color: darkgray;
+
+    }
+}
+.favorite {
+    @apply text-white;
+}
+.btn {
+    @apply text-white bg-red-600 border-none text-xl p-4 rounded-[10rem];
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}

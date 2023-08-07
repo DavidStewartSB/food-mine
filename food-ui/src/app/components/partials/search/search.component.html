@@ -1,0 +1,8 @@
+<div class="flex justify-center mt-12 mb-6">
+    <input #s class="form-input"
+        type="text" 
+        placeholder="Search food Mine!" 
+        (keyup.enter)="search(s.value)" 
+        [value]="searchTerm">
+    <button class="form-submit" (click)="search(s.value)">Search</button>
+</div>

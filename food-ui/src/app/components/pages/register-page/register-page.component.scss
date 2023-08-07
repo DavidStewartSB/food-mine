@@ -1,0 +1,6 @@
+button {
+    @apply w-full bg-red-600 opacity-75 mt-3 rounded-[10rem] text-center text-white font-bold py-2; 
+    &:hover {
+        @apply opacity-100
+    }
+}

@@ -1,0 +1,35 @@
+<table class="border border-[#eeeeee] w-full mt-4 py-2 px-4">
+    <tr>
+        <td colspan="5">
+            <h3 class="mt-2 ml-1">Order Items:</h3>
+        </td>
+    </tr>
+    <tr *ngFor="let item of order.items">
+        <td>
+            <a class="hover:opacity-90" routerLink="/food/{{item.food.id}}">
+                <img [src]="item.food.imageUrl" [alt]="item.food.name">
+            </a>
+        </td>
+        <td>
+            {{item.food.name}}
+        </td>
+        <td>
+            {{item.food.price | currency: "BRL"}}
+        </td>
+        <td>
+            {{item.quantity}}
+        </td>
+        <td>
+            {{item.price | currency: "BRL"}}
+        </td>
+    </tr>
+
+    <tr colspan="3">
+        <td>
+            <strong>Total : </strong>
+        </td>
+        <td>
+            <strong>{{order.totalPrice | currency: "BRL"}}  </strong>
+        </td>
+    </tr>
+</table>

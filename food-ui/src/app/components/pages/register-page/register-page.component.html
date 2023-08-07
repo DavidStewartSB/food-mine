@@ -1,0 +1,52 @@
+<div class="mx-auto container">
+    <div class="details">
+        <app-title title="Register" class="text-center"></app-title>
+
+        <form class="w-96 mx-auto border border-gray-300 rounded-2xl py-8 px-5" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+            <text-input 
+                [control]="fc.name"
+                [showErrorsWhen]="isSubmitted"
+                label="Name"
+                placeholder="First Name"
+            ></text-input>
+            <text-input 
+                [control]="fc.email"
+                [showErrorsWhen]="isSubmitted"
+                label="E-mail"
+                type="email"
+                placeholder="seu@email.com"
+            ></text-input>
+            <text-input 
+            [control]="fc.address"
+            [showErrorsWhen]="isSubmitted"
+            label="Address"
+            type="text"
+            placeholder="Digite seu Endereço"
+            ></text-input>
+            <text-input 
+            [control]="fc.password"
+            [showErrorsWhen]="isSubmitted"
+            label="Senha"
+            type="password"
+            placeholder="Digite sua senha"
+            ></text-input>
+            <text-input 
+            [control]="fc.confirmPassword"
+            [showErrorsWhen]="isSubmitted"
+            label="Confirme a senha"
+            type="password"
+            placeholder="Digite sua senha"
+            ></text-input>
+
+            <div class="button">
+                <button type="submit" (ngSubmit)="submitRegister()">Register</button>
+            </div>
+
+
+            <div class="text-center mt-5">
+                Já é cadastro? &nbsp;
+                <a class="font-bold text-red-500" routerLink="/login" [queryParams]="{returnUrl: returnUrl}">Entrar</a>
+            </div>
+        </form>
+    </div>
+</div>

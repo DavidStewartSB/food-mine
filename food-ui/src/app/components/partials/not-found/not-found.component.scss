@@ -1,0 +1,11 @@
+div {
+    @apply flex items-center justify-center flex-col text-2xl h-[15rem];
+}
+
+a {
+    @apply text-xl bg-red-500 text-white rounded-[10rem] py-3 px-4 m-4 opacity-80;
+}
+
+a:hover {
+    @apply opacity-100;
+}

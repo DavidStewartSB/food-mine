@@ -1,0 +1,41 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+
+<app-not-found
+    [visible]="!cart || !cart.items.length"
+    notFoundMessage="Carrinho está vazio!"
+    resetLinkText="Ir para Home Page"
+>
+
+</app-not-found>
+
+<div  *ngIf="cart && cart.items.length" class="container mx-auto grid grid-cols-12 gap-5">
+
+    <div class="col-span-12 md:col-span-7">
+        <ul class="">
+            <li *ngFor="let cartItem of cart.items">
+                <div><img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name"></div>
+                <div><a routerLink="/food/{{cartItem.food.id}}"></a></div>
+                <div>
+                    <select #quantitySelect
+                        [value]="cartItem.quantity"
+                        (change)="changeQuantity(cartItem, quantitySelect.value)"
+                        >
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                    </select>
+                </div>
+                <div>{{cartItem.price | currency: 'BRL'}}</div>
+                <div><button class="rm-btn" (click)="removeFromCart(cartItem)">Remove Item</button></div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="col-span-12 md:col-span-5 checkout">
+        <div class="foods-count">{{cart.totalCount}}</div>
+        <div class="total-price">{{cart.totalPrice | currency: "BRL"}}</div>
+        <a routerLink="/checkout">Process to Checkout</a>
+    </div>
+
+</div>
